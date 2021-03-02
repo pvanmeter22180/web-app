@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const path = require("path");
 const { createServer } = require("http");
-const { auth, requiresAuth } = require("express-openid-connect");
+const { auth } = require("express-openid-connect");
 
 const {
   checkUrl,
@@ -40,7 +40,7 @@ app.use(
 app.use(
  auth({
    secret: SESSION_SECRET,
-   authRequired: false,
+
    auth0Logout: true,
    baseURL: APP_URL,
  })
