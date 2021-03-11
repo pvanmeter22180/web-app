@@ -48,13 +48,6 @@ app.use(
 );
 
 
-app.get("/", async (req, res) => {
-  res.render("home", {
-    user: req.oidc && req.oidc.user,
-    total: expenses.reduce((accum, expense) => accum + expense.value, 0),
-    count: expenses.length,
-  });
-});
 
 app.get("/", async (req, res) => {
  try {
